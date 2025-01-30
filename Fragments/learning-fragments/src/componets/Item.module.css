@@ -1,8 +1,7 @@
 .kg-item{
-  background-color: khaki!important;
-  border: none!important;
+  background-color: #000000!important;
 }
 .kg-span{
-  font-weight: 500;
-  color: rgb(0, 133, 55);
+  font-weight: 400;
+  color: rgb(0, 167, 69);
 }
