@@ -4,7 +4,13 @@ let FoodItems = ({ data }) => {
     <>
       <ul className="list-group">
         {data.map((element) => (
-          <Item key={element} foodItems={element}></Item>
+          <Item
+            key={element}
+            foodItems={element}
+            handleBuyButton={() => {
+              console.log(`${element} bought`);
+            }}
+          ></Item>
         ))}
       </ul>
     </>
