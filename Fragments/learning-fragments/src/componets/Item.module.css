@@ -1,11 +1,15 @@
 .kg-item{
-  background-color: #000000!important;
+  border: 1px solid #0d6efd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .kg-span{
-  font-weight: 400;
-  color: rgb(0, 167, 69);
+  font-weight: 500;
+  color: #000;
+  text-transform: capitalize;
+  font-size: 18px;
 }
-
 .button{
   float: right;
 }

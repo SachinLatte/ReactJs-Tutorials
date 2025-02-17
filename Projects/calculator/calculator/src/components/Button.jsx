@@ -1,5 +1,5 @@
 import styles from "./Button.module.css";
-const Button = () => {
+const Button = ({onButtonClick}) => {
   const buttonNames = [
     "C",
     "1",
@@ -22,7 +22,7 @@ const Button = () => {
   return (
     <>
       {buttonNames.map((elem) => (
-        <button className={styles.button}>{elem}</button>
+        <button key={elem} className={styles.button} onClick={()=> onButtonClick(elem)}>{elem}</button>
       ))}
     </>
   );

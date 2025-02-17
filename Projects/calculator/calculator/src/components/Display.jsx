@@ -1,7 +1,7 @@
 import styles from "./Display.module.css";
-const Display = () => {
+const Display = ({displayValue}) => {
   return (
-    <input className={styles.display} type="text" required autocomplete="off" />
+    <input className={styles.display} type="text" required  value={displayValue} readOnly/>
   );
 };
 export default Display;
