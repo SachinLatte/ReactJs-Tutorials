@@ -1,5 +1,4 @@
-const DateInput = ({ondateInputChange,todoDate }) =>{
-  return <input type="date" value={todoDate} onChange={ondateInputChange}/>
+const DateInput = ({dueDateElement }) =>{
+  return <input type="date" ref={dueDateElement}/>
 }
-
 export default DateInput;

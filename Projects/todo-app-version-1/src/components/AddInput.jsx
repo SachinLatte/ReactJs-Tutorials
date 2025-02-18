@@ -1,6 +1,6 @@
-const AddInput = ({onnameinputChange, todoName}) =>{
+const AddInput = ({todoNameElement}) =>{
   return <>
-  <input type="text" placeholder="Enter ToDO Here" value={todoName} required autoComplete="off" onChange={onnameinputChange}/>
+  <input type="text" ref={todoNameElement} placeholder="Enter ToDO Here" required autoComplete="off"/>
   </>
 }
 

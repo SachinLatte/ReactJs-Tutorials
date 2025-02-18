@@ -1,38 +1,34 @@
 import AddInput from "./AddInput";
 import DateInput from "./DateInput";
 import AddButton from "./AddButton";
-import { useState } from "react";
+import {useRef} from "react";
 function AddTodo({onhandleChange}) {
-  const [todoName, setTodoName] = useState("");
-  const onnameinputChange = (event) => {
-      let newName = event.target.value;
-      setTodoName(newName);
-  }
-  const [todoDate, setTodoDate] = useState("");
-  const ondateInputChange= (event) =>{
-    let newDate = event.target.value;
-    setTodoDate(newDate);
-  }
-
-  const handleaddButtonClicked = ()=>{
+  
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
+// Add button event to add task to the list
+  const handleaddButtonClicked = (event)=>{
+    event.preventDefault();
+    let todoName  = todoNameElement.current.value;
+    let todoDate  = dueDateElement.current.value;
+    todoNameElement.current.value = "";
+    dueDateElement.current.value ="";
     onhandleChange(todoName,todoDate);
-    setTodoName("");
-    setTodoDate("");
   }
   return (
     <div className="container text-start">
-      <div className="row kg-row">
+      <form action = "" onSubmit={handleaddButtonClicked} className="row kg-row" >
         <div className="col-6">
-          <AddInput onnameinputChange={onnameinputChange} todoName={todoName} />
+          <AddInput todoNameElement = {todoNameElement}/>
         </div>
         <div className="col-4">
-          <DateInput ondateInputChange={ondateInputChange} todoDate={todoDate}  />
+          <DateInput dueDateElement = {dueDateElement}  />
         </div>
         <div className="col-2">
-          <AddButton onhandleChange={handleaddButtonClicked}/>
+          <AddButton/>
         </div>
+        </form>
       </div>
-    </div>
   );
 }
 
