@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return <div>
-      <h2>This is my div</h2>
+      <h2>This is my bootstrap div</h2>
     </div>
 }
 
