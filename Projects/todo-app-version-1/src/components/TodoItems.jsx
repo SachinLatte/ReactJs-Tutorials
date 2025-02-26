@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { todoItemsContext } from "../store/todo-items-store";
 import TodoItem from "./TodoItem";
 import styles from "./TodoItems.module.css";
-const todoItems = ({ todoItems, onDeleteClick }) => {
+const todoItems = ({onDeleteClick }) => {
+  const todoItems = useContext(todoItemsContext);
+  console.log(todoItems);
   return (
     <>
       <div className={styles.itemsContainer}>
