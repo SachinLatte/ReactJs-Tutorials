@@ -2,8 +2,10 @@ import AddInput from "./AddInput";
 import DateInput from "./DateInput";
 import AddButton from "./AddButton";
 import {useRef} from "react";
-function AddTodo({onhandleChange}) {
-  
+import { useContext } from "react";
+import { todoItemsContext } from "../store/todo-items-store";
+function AddTodo() {
+  const {addNewItem} = useContext(todoItemsContext);
   const todoNameElement = useRef();
   const dueDateElement = useRef();
 // Add button event to add task to the list
@@ -13,7 +15,7 @@ function AddTodo({onhandleChange}) {
     let todoDate  = dueDateElement.current.value;
     todoNameElement.current.value = "";
     dueDateElement.current.value ="";
-    onhandleChange(todoName,todoDate);
+    addNewItem(todoName,todoDate);
   }
   return (
     <div className="container text-start">
@@ -31,5 +33,4 @@ function AddTodo({onhandleChange}) {
       </div>
   );
 }
-
 export default AddTodo;
